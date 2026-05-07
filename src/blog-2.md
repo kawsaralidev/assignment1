@@ -7,6 +7,27 @@ The four main pillars of OOP are:
 Inheritance allows a class to inherit properties and methods from another class.
 It allows developers to reuse existing logic instead of rewriting code over and over again.
 
+class Person {
+constructor(
+public name: string,
+public age: number
+) {}
+
+introduce(): string {
+return `Hi, I am ${this.name}`;
+}
+}
+
+class Student extends Person {
+constructor(
+name: string,
+age: number,
+public grade: string
+) {
+super(name, age);
+}
+}
+
 2. Polymorphism
 
 Polymorphism means “many forms.”
@@ -17,9 +38,41 @@ Esy extension.
 New features can be added without changing existing code.
 Clean logic.
 
+class Animal {
+makeSound(): void {
+console.log("Animal sound");
+}
+}
+
+class Dog extends Animal {
+makeSound(): void {
+console.log("Bark");
+}
+}
+
+class Cat extends Animal {
+makeSound(): void {
+console.log("Meow");
+}
+}
+
 3. Abstraction
    Abstraction hides the details of the internal implementation and exposes only the essential functionality.
    It helps to focus on what an object does instead of how it works internally, thereby reducing complexity.
+
+   abstract class Vehicle {
+   abstract startEngine(): void;
+
+stopEngine(): void {
+console.log("Engine stopped");
+}
+}
+
+class Car extends Vehicle {
+startEngine(): void {
+console.log("Car engine started");
+}
+}
 
 4. Encapsulation
    Encapsulation protects data by restricting direct access to internal properties.
@@ -34,3 +87,17 @@ Data protection.
 Prevents accidental changes.
 Improved security.
 Sensitive logic is hidden.
+
+class BankAccount {
+private balance: number = 0;
+
+deposit(amount: number): void {
+if (amount > 0) {
+this.balance += amount;
+}
+}
+
+getBalance(): number {
+return this.balance;
+}
+}
