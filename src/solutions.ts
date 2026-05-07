@@ -4,16 +4,12 @@ function filterEvenNumbers(numbers: number[]): number[] {
   return numbers.filter((num) => num % 2 === 0);
 }
 
-// console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6]));
-
 //Problem 2 solution //
 
 function reverseString(str: string): string {
   const newStr = str.split("").reverse().join("");
   return newStr;
 }
-
-// console.log(reverseString("typescript"));
 
 // Problem 3 solution //
 
@@ -27,9 +23,6 @@ const checkType = (input: numOrStr): string | number => {
   }
 };
 
-// console.log(checkType("Hello"));
-// console.log(checkType(42));
-
 // Problem 4 solution //
 
 const getProperty = <T>(obj: T, key: keyof T) => {
@@ -37,7 +30,6 @@ const getProperty = <T>(obj: T, key: keyof T) => {
 };
 const user = { id: 1, name: "John Doe", age: 21 };
 const result = getProperty(user, "name");
-// console.log(result);
 
 // Problem 5 solution //
 
@@ -58,7 +50,6 @@ const myBook = {
   author: "Jane Doe",
   publishedYear: 2024,
 };
-// console.log(toggleReadStatus(myBook));
 
 // Problem 6 solution //
 
@@ -86,8 +77,6 @@ class Student extends Person {
 }
 const student = new Student("Alice", 20, "A");
 
-// console.log(student.getDetails());
-
 //Problem 7 solution //
 
 function getIntersection(arr1: number[], arr2: number[]): number[] {
@@ -99,5 +88,3 @@ function getIntersection(arr1: number[], arr2: number[]): number[] {
     }
   });
 }
-
-// console.log(getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));
